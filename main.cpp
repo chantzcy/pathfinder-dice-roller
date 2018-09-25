@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include <stdlib.h>
 #include <ctime>
 
 using namespace std;
@@ -15,9 +16,13 @@ int main() {
     cout << " Please enter the particular die you need to roll (number only. ex: 4, 6, 8, 12, etc.) ";
         int dice_sides;
     cin >> dice_sides;
-    cout << " Alright, you want to roll a " << dice_sides << "-sided die.";
-    cout << " Enter the number of rolls you would \n like for this particular die: ";
+if (dice_sides != 4&& dice_sides != 6&& dice_sides != 8&& dice_sides != 10&& dice_sides != 12&& dice_sides != 20){
+    cout << " Input error. " << dice_sides << " is invalid. Please run program again. ";
+    exit (EXIT_FAILURE);
+}
+
         int dice_rolls;
+        cout << " Enter the number of rolls you would \n like for this particular die: ";
     cin >> dice_rolls;
         int adjusted_rolls (dice_rolls - 1);
     
@@ -86,6 +91,10 @@ if (dice_sides == 20){
         cout << random_twenty << "\n";
     }
 }
+
+
+
+    
     
     return 0;
 }
